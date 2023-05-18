@@ -15,6 +15,7 @@ chmod +x startbot
 read -p "IP: " IP
 read -p "PORT: " PORT
 read -p "BOT-GM: " NAME
+read -p "VERSION: " VERSION
 echo -e "\e[1;33m[50%]Installing nodejs\e[0m"
 curl -fsSL https://deb.nodesource.com/setup_17.x | sudo -E bash - &>/dev/null
 sudo apt-get install -y nodejs &>/dev/null
@@ -23,7 +24,7 @@ apt-get install -y nodejs &>/dev/null
 echo -e "\e[1;33m[75%]Installing bedrock-protocol npm\e[0m"
 npm install bedrock-protocol &>/dev/null
 echo -e "\e[1;33m[95%]inserting code to index.js\e[0m"
-printf "const bedrock = require('bedrock-protocol') \nconst client = bedrock.createClient({ \nhost: '$IP', \nport: $PORT, \nusername: '$NAME', \noffline: true \n}) \nconsole.log ('connected') \nconsole.log ('Hit Control C If you want to stop')" > index.js
+printf "const bedrock = require('bedrock-protocol') \nconst client = bedrock.createClient({ \nhost: '$IP', \nport: $PORT, \nversion: '$VERSION', \nusername: '$NAME', \noffline: true \n}) \nconsole.log ('connected') \nconsole.log ('Hit Control C If you want to stop')" > index.js
 sleep 1s
 echo -e "\e[1;33m[97%]installation is done\e[0m"
 echo -e "\e[1;33mm[98%]inserting is done\e[0m"
