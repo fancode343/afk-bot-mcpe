@@ -16,7 +16,6 @@ read -p "IP: " IP
 read -p "PORT: " PORT
 read -p "BOT-GM: " NAME
 read -p "VERSION: " VERSION
-echo -e "\e[31mOFFLINE = 1\e[0m"
 echo -e "\e[32mTRUE = JOIN WITHOUT SIGNIN TO XBOX(default)\e[0m"
 echo -e "\e[32mFALSE = YOU WILL ASK TO SIGN IN XBOX\e[0m"
 read -p "TRUE OR FALSE?: " OFFLINE
