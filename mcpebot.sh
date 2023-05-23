@@ -16,6 +16,7 @@ read -p "IP: " IP
 read -p "PORT: " PORT
 read -p "BOT-GM: " NAME
 read -p "VERSION: " VERSION
+echo -e "\e[31mOFFLINE = 1\e[0m"
 echo -e "\e[32mTRUE = 1\e[0m"
 echo -e "\e[32mFALSE = 0 (default)\e[0m"
 read -p "Enter a number: " OFFLINE
