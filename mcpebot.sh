@@ -27,8 +27,8 @@ echo -e "\e[1;33m[95%]inserting code to index.js\e[0m"
 printf "const bedrock = require('bedrock-protocol') \nconst client = bedrock.createClient({ \nhost: '$IP', \nport: $PORT, \nversion: '$VERSION', \nusername: '$NAME', \noffline: true \n}) \nconsole.log ('connected') \nconsole.log ('Hit Control C If you want to stop')" > index.js
 sleep 1s
 echo -e "\e[1;33m[97%]installation is done\e[0m"
-echo -e "\e[1;33mm[98%]inserting is done\e[0m"
-echo -e "\e[1;33mm[100%]all is done\e[0m"
+echo -e "\e[1;33m[98%]inserting is done\e[0m"
+echo -e "\e[1;33m[100%]all is done\e[0m"
 echo "======================"
 echo -e "\e[33mHit ctrl C if You want to Stop\e[0m"
 echo -e "\e[33mTo start Again type> ./startbot\e[0m"
