@@ -1,5 +1,12 @@
 #!/bin/bash
-
+echo "#######################################################################################"
+echo "#"
+echo "#                                   Minecraft Brdrock Bot SCRIPT"
+echo "#"
+echo "#                                     By: GranGuorgeMC - Script"
+echo "#"                                        PrismarineJS - JS CODE
+echo "#"
+echo "#######################################################################################"
 echo -e "\e[31mStarting\e[0m"
 sudo apt update -y &>/dev/null
 apt update -y &>/dev/null
@@ -16,9 +23,9 @@ read -p "IP: " IP
 read -p "PORT: " PORT
 read -p "BOT-GM: " NAME
 read -p "VERSION: " VERSION
-echo -e "\e[32mTRUE = JOIN WITHOUT SIGNIN TO XBOX(default)\e[0m"
-echo -e "\e[32mFALSE = YOU WILL ASK TO SIGN IN XBOX\e[0m"
-read -p "TRUE OR FALSE?: " OFFLINE
+echo -e "\e[32mFALSE[0] = YOU WILL ASK TO SIGN IN XBOX(default)\e[0m"
+echo -e "\e[32mTRUE[1] = JOIN WITHOUT SIGNIN TO XBOX\e[0m"
+read -p "Enter Input (0-7): " OFFLINE
 echo -e "\e[1;33m[50%]Installing nodejs\e[0m"
 curl -fsSL https://deb.nodesource.com/setup_17.x | sudo -E bash - &>/dev/null
 sudo apt-get install -y nodejs &>/dev/null
@@ -27,8 +34,15 @@ apt-get install -y nodejs &>/dev/null
 echo -e "\e[1;33m[75%]Installing bedrock-protocol npm\e[0m"
 npm install bedrock-protocol &>/dev/null
 echo -e "\e[1;33m[95%]inserting code to index.js\e[0m"
-printf "const bedrock = require('bedrock-protocol') \nconst client = bedrock.createClient({ \nhost: '$IP', \nport: $PORT, \nversion: '$VERSION', \nusername: '$NAME', \noffline: $OFFLINE \n}) \nconsole.log ('connected') \nconsole.log ('Hit Control C If you want to stop')" > index.js
-sleep 1s
+case $input in
+
+    0)
+    printf "const bedrock = require('bedrock-protocol') \nconst client = bedrock.createClient({ \nhost: '$IP', \nport: $PORT, \nversion: '$VERSION', \nusername: '$NAME', \noffline: FALSE \n}) \nconsole.log ('connected') \nconsole.log ('Hit Control C If you want to stop')" > index.js
+    sleep 1s
+    1)
+    printf "const bedrock = require('bedrock-protocol') \nconst client = bedrock.createClient({ \nhost: '$IP', \nport: $PORT, \nversion: '$VERSION', \nusername: '$NAME', \noffline: TRUE \n}) \nconsole.log ('connected') \nconsole.log ('Hit Control C If you want to stop')" > index.js
+    sleep 1s
+    esac
 echo -e "\e[1;33m[97%]installation is done\e[0m"
 echo -e "\e[1;33m[98%]inserting is done\e[0m"
 echo -e "\e[1;33m[100%]all is done\e[0m"
