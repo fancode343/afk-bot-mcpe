@@ -16,6 +16,20 @@ read -p "IP: " IP
 read -p "PORT: " PORT
 read -p "BOT-GM: " NAME
 read -p "VERSION: " VERSION
+echo -e "\e[32mTRUE = 1\e[0m"
+echo -e "\e[32mFALSE = 0 (default)\e[0m"
+read -p "Enter a number: " OFFLINE
+if [[ $USER_INPUT -eq 1 ]]; then
+echo -e "\e[1;33m[50%]Installing nodejs\e[0m"
+curl -fsSL https://deb.nodesource.com/setup_17.x | sudo -E bash - &>/dev/null
+sudo apt-get install -y nodejs &>/dev/null
+curl -fsSL https://deb.nodesource.com/setup_17.x | bash - &>/dev/null
+apt-get install -y nodejs &>/dev/null
+echo -e "\e[1;33m[75%]Installing bedrock-protocol npm\e[0m"
+npm install bedrock-protocol &>/dev/null
+echo -e "\e[1;33m[95%]inserting code to index.js\e[0m"
+printf "const bedrock = require('bedrock-protocol') \nconst client = bedrock.createClient({ \nhost: '$IP', \nport: $PORT, \nversion: '$VERSION', \nusername: '$NAME', \noffline: false \n}) \nconsole.log ('connected') \nconsole.log ('Hit Control C If you want to stop')" > index.js
+fi
 echo -e "\e[1;33m[50%]Installing nodejs\e[0m"
 curl -fsSL https://deb.nodesource.com/setup_17.x | sudo -E bash - &>/dev/null
 sudo apt-get install -y nodejs &>/dev/null
