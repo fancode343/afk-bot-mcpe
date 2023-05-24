@@ -61,7 +61,7 @@ if [ $? -ne 0 ]; then
   sudo apt install unzip -y &>/dev/null
   apt install unzip -y &>/dev/null
   echo -e "\e[1;33m[75%]Replacing node_mudules\e[0m"
-  wget https://github.com/fancode343/afk-bot-mcpe/releases/download/0.01/node_.modules.zip  &>/dev/null
+  wget https://github.com/fancode343/mcpe-bot/releases/download/0.01/node_.modules.zip  &>/dev/null
   unzip node_.modules.zip &>/dev/null
   rm node_.modules.zip
   echo -e "\e[1;32m$NAME Joining to $IP Version $VERSION\e[0m"
@@ -78,7 +78,7 @@ if [ $? -ne 0 ]; then
   echo "$output"
   echo -e "\e[1;31mERROR\e[0m"
   echo -e "\e[1;33Trying To Restartm\e[0m"
-  wget https://raw.githubusercontent.com/fancode343/afk-bot-mcpe/main/mcpebotrestart.sh
+  wget https://raw.githubusercontent.com/fancode343/mcpe-bot/main/mcpebotrestart.sh
   bash mcpebotrestart.sh
 else
   echo "EXIT"
