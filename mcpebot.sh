@@ -17,7 +17,7 @@ apt install tsu -y &>/dev/null
 sudo apt intsall tsu -y &>/dev/null
 apt install curl -y &>/dev/null
 sudo apt install curl -y &>/dev/null
-printf "node index.js |nnode.js" > startbot
+printf "node index.js \nnode.js" > startbot
 chmod +x startbot
 read -p "IP: " IP
 read -p "PORT: " PORT
@@ -25,7 +25,7 @@ read -p "BOT-GM: " NAME
 read -p "VERSION: " VERSION
 echo -e "\e[32mFALSE[0] = YOU WILL ASK TO SIGN IN XBOX(default)\e[0m"
 echo -e "\e[32mTRUE[1] = JOIN WITHOUT SIGNIN TO XBOX\e[0m"
-read -p "Enter Input (0-7): " OFFLINE
+read -p "Enter Input (0-1): " OFFLINE
 echo -e "\e[1;33m[50%]Installing nodejs\e[0m"
 curl -fsSL https://deb.nodesource.com/setup_17.x | sudo -E bash - &>/dev/null
 sudo apt-get install -y nodejs &>/dev/null
@@ -34,7 +34,7 @@ apt-get install -y nodejs &>/dev/null
 echo -e "\e[1;33m[75%]Installing bedrock-protocol npm\e[0m"
 npm install bedrock-protocol &>/dev/null
 echo -e "\e[1;33m[95%]inserting code to index.js\e[0m"
-case $input in
+case $OFFLINE in
 
     0)
     printf "const bedrock = require('bedrock-protocol') \nconst client = bedrock.createClient({ \nhost: '$IP', \nport: $PORT, \nversion: '$VERSION', \nusername: '$NAME', \noffline: FALSE \n}) \nconsole.log ('connected') \nconsole.log ('Hit Control C If you want to stop')" > index.js
