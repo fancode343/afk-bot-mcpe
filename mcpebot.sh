@@ -4,7 +4,7 @@ echo "#"
 echo "#                                   Minecraft Brdrock Bot SCRIPT"
 echo "#"
 echo "#                                     By: GranGuorgeMC - Script"
-echo "#"                                        PrismarineJS - JS CODE
+echo "#                                         PrismarineJS - JS CODE"
 echo "#"
 echo "#######################################################################################"
 echo -e "\e[31mStarting\e[0m"
