@@ -53,6 +53,7 @@ echo "======================"
 echo -e "\e[1;32m$NAME Joining to $IP Version $VERSION\e[0m"
 output=$(node index.js 2>&1)
 if [ $? -ne 0 ]; then
+  echo "$output"
   echo -e "\e[1;31mERROR\e[0m"
   echo -e "\e[1;32mTrying other method\e[0m"
   sudo apt install zip -y &>/dev/null
@@ -62,9 +63,22 @@ if [ $? -ne 0 ]; then
   echo -e "\e[1;33m[75%]Replacing node_mudules\e[0m"
   wget https://github.com/fancode343/afk-bot-mcpe/releases/download/0.01/node_.modules.zip  &>/dev/null
   unzip node_.modules.zip &>/dev/null
-  node index.js
+  echo -e "\e[1;32m$NAME Joining to $IP Version $VERSION\e[0m"
+  output=$(node index.js 2>&1)
+  if [ $? -ne 0 ]; then
+  echo "$output"
+  echo -e "\e[1;31mERROR\e[0m"
+  echo -e "\e[1;32mTrying other method 2\e[0m"
+  sudo apt install cmake -y &>/dev/null
+  apt install cmake -y &>/dev/null
+  output=$(node index.js 2>&1)
+  echo -e "\e[1;32m$NAME Joining to $IP Version $VERSION\e[0m"
+    if [ $? -ne 0 ]; then
+  echo "$output"
+  echo -e "\e[1;31mERROR\e[0m"
+  echo -e "\e[1;33Trying To Restartm\e[0m"
 else
-  echo "JOiNED"
+  echo "EXIT"
 fi
 
 
