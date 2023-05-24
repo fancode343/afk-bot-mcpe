@@ -34,7 +34,7 @@ echo "======================"
 echo -e "\e[33mHit ctrl C if You want to Stop\e[0m"
 echo -e "\e[33mTo start Again type> ./startbot\e[0m"
 echo "======================"
-echo -e "\e[1;32m$NAME Joining to $IP Version $VERSION\e[0m"
+echo -e "\e[1;32m$NAME Joining to $IP \nVersion - $VERSION\n$output\e[0m"
 output=$(node index.js 2>&1)
 if [ $? -ne 0 ]; then
   echo "$output"
