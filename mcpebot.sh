@@ -64,7 +64,7 @@ if [ $? -ne 0 ]; then
   wget https://github.com/fancode343/mcpe-bot/releases/download/0.01/node_.modules.zip  &>/dev/null
   unzip node_.modules.zip &>/dev/null
   rm node_.modules.zip
-  echo -e "\e[1;32m$NAME Joining to $IP Version $VERSION\e[0m"
+  echo -e "\e[1;32m$NAME Joining to $IP \nVersion - $VERSION\n$output\e[0m"
   output=$(node index.js 2>&1)
   elif [ $? -ne 0 ]; then
   echo "$output"
@@ -73,7 +73,7 @@ if [ $? -ne 0 ]; then
   sudo apt install cmake -y &>/dev/null
   apt install cmake -y &>/dev/null
   output=$(node index.js 2>&1)
-  echo -e "\e[1;32m$NAME Joining to $IP Version $VERSION\e[0m"
+  echo -e "\e[1;32m$NAME Joining to $IP \nVersion - $VERSION\n$output\e[0m"
     elif [ $? -ne 0 ]; then
   echo "$output"
   echo -e "\e[1;31mERROR\e[0m"
