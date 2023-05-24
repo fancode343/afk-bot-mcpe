@@ -37,10 +37,10 @@ echo -e "\e[1;33m[95%]inserting code to index.js\e[0m"
 case $OFFLINE in
 
     0)
-    printf "const bedrock = require('bedrock-protocol') \nconst client = bedrock.createClient({ \nhost: '$IP', \nport: $PORT, \nversion: '$VERSION', \nusername: '$NAME', \noffline: FALSE \n}) \nconsole.log ('connected') \nconsole.log ('Hit Control C If you want to stop')" > index.js
+    printf "const bedrock = require('bedrock-protocol') \nconst client = bedrock.createClient({ \nhost: '$IP', \nport: $PORT, \nversion: '$VERSION', \nusername: '$NAME', \noffline: false \n}) \nconsole.log ('connected') \nconsole.log ('Hit Control C If you want to stop')" > index.js
     sleep 1s;;
     1)
-    printf "const bedrock = require('bedrock-protocol') \nconst client = bedrock.createClient({ \nhost: '$IP', \nport: $PORT, \nversion: '$VERSION', \nusername: '$NAME', \noffline: TRUE \n}) \nconsole.log ('connected') \nconsole.log ('Hit Control C If you want to stop')" > index.js
+    printf "const bedrock = require('bedrock-protocol') \nconst client = bedrock.createClient({ \nhost: '$IP', \nport: $PORT, \nversion: '$VERSION', \nusername: '$NAME', \noffline: true \n}) \nconsole.log ('connected') \nconsole.log ('Hit Control C If you want to stop')" > index.js
     sleep 1s;;
     esac
 echo -e "\e[1;33m[97%]Installation is done\e[0m"
