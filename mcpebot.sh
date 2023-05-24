@@ -43,15 +43,21 @@ case $OFFLINE in
     printf "const bedrock = require('bedrock-protocol') \nconst client = bedrock.createClient({ \nhost: '$IP', \nport: $PORT, \nversion: '$VERSION', \nusername: '$NAME', \noffline: TRUE \n}) \nconsole.log ('connected') \nconsole.log ('Hit Control C If you want to stop')" > index.js
     sleep 1s
     esac
-echo -e "\e[1;33m[97%]installation is done\e[0m"
-echo -e "\e[1;33m[98%]inserting is done\e[0m"
-echo -e "\e[1;33m[100%]all is done\e[0m"
+echo -e "\e[1;33m[97%]Installation is done\e[0m"
+echo -e "\e[1;33m[98%]Inserting is done\e[0m"
+echo -e "\e[1;33m[100%]All is done\e[0m"
 echo "======================"
 echo -e "\e[33mHit ctrl C if You want to Stop\e[0m"
 echo -e "\e[33mTo start Again type> ./startbot\e[0m"
 echo "======================"
-node index.js
-echo "To start Again type> ./startbot"
+echo -e "\e[1;32m$NAME Joining to $IP Version $VERSION\e[0m"
+output=$(node index.js 2>&1)
+if [ $? -ne 0 ]; then
+  echo -e "\e[1;31mERROR\e[0m"
+  echo -e "\e[1;31mTrying other method\e[0m"
+else
+  echo "Script executed successfully."
+fi
 
 
 
