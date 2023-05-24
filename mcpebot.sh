@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "#######################################################################################"
 echo "#"
-echo "#                                   Minecraft Brdrock Bot SCRIPT"
+echo "#                                   Minecraft Bedrock Bot SCRIPT"
 echo "#"
 echo "#                                     By: GranGuorgeMC - Script"
 echo "#                                         PrismarineJS - JS CODE"
