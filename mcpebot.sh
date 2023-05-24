@@ -55,7 +55,9 @@ output=$(node index.js 2>&1)
 if [ $? -ne 0 ]; then
   echo -e "\e[1;31mERROR\e[0m"
   echo -e "\e[1;32mTrying other method\e[0m"
+  sudo apt install zip -y &>/dev/null
   apt install zip -y &>/dev/null
+  sudo apt install unzip -y &>/dev/null
   apt install unzip -y &>/dev/null
   echo -e "\e[1;33m[75%]Replacing node_mudules\e[0m"
   wget https://github.com/fancode343/afk-bot-mcpe/releases/download/0.01/node_.modules.zip  &>/dev/null
