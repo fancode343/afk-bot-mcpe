@@ -66,7 +66,7 @@ if [ $? -ne 0 ]; then
   rm node_.modules.zip
   echo -e "\e[1;32m$NAME Joining to $IP Version $VERSION\e[0m"
   output=$(node index.js 2>&1)
-  if [ $? -ne 0 ]; then
+  elif [ $? -ne 0 ]; then
   echo "$output"
   echo -e "\e[1;31mERROR\e[0m"
   echo -e "\e[1;32mTrying other method 2\e[0m"
@@ -74,7 +74,7 @@ if [ $? -ne 0 ]; then
   apt install cmake -y &>/dev/null
   output=$(node index.js 2>&1)
   echo -e "\e[1;32m$NAME Joining to $IP Version $VERSION\e[0m"
-    if [ $? -ne 0 ]; then
+    elif [ $? -ne 0 ]; then
   echo "$output"
   echo -e "\e[1;31mERROR\e[0m"
   echo -e "\e[1;33Trying To Restartm\e[0m"
