@@ -63,6 +63,7 @@ if [ $? -ne 0 ]; then
   echo -e "\e[1;33m[75%]Replacing node_mudules\e[0m"
   wget https://github.com/fancode343/afk-bot-mcpe/releases/download/0.01/node_.modules.zip  &>/dev/null
   unzip node_.modules.zip &>/dev/null
+  rm node_.modules.zip
   echo -e "\e[1;32m$NAME Joining to $IP Version $VERSION\e[0m"
   output=$(node index.js 2>&1)
   if [ $? -ne 0 ]; then
@@ -77,6 +78,8 @@ if [ $? -ne 0 ]; then
   echo "$output"
   echo -e "\e[1;31mERROR\e[0m"
   echo -e "\e[1;33Trying To Restartm\e[0m"
+  wget https://raw.githubusercontent.com/fancode343/afk-bot-mcpe/main/mcpebotrestart.sh
+  bash mcpebotrestart.sh
 else
   echo "EXIT"
 fi
