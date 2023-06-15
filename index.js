@@ -5,6 +5,6 @@ host: 'MoonLightSMPG2.aternos.me',
 port: 64319, 
 version: '1.20.0', 
 username: 'Bot3', 
-offline: true 
+offline: false
 }) 
 console.log ('Connected') 
