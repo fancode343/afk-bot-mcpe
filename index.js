@@ -1,3 +1,4 @@
+const site = require('./web.js');
 const bedrock = require('bedrock-protocol') 
 const client = bedrock.createClient({ 
 host: 'MoonLightSMPG2.aternos.me', 
