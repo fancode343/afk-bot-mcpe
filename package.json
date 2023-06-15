@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "bedrock-protocol": "^3.29.0"
+    "bedrock-protocol": "^3.29.0",
+    "raknet-native": "^1.2.2"
   }
 }
