@@ -13,7 +13,8 @@ port: 64319,
 version: '1.20.0', 
 username: 'Bot3', 
 offline: true
-}) 
+})
+res.send('<h1>Bot is online</h1> <h2>BY REPLIT</h2> <iframe width="560" height="315" src="https://www.youtube.com/embed/XvQxIsz30rE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <br> <iframe width="560" height="315" src="https://www.youtube.com/embed/9tLglpFAyIg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
 
 });
 
