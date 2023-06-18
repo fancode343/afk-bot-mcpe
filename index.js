@@ -12,7 +12,7 @@ app.get("/bot", (req, res) => {
     port: 64319, 
     version: '1.20.0', 
     username: 'Bot3', 
-    offline: true
+    offline: false
   });
 
   const htmlResponse = `
