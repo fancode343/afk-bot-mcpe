@@ -82,6 +82,6 @@ app.get("/bot", (req, res) => {
   res.send(htmlResponse);
 });
 
-app.listen(3000, () => {
+app.listen(8080, () => {
   console.log('✅ Web is up');
 });
