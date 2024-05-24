@@ -17,6 +17,7 @@ apt install tsu -y &>/dev/null
 sudo apt intsall tsu -y &>/dev/null
 apt install curl -y &>/dev/null
 sudo apt install curl -y &>/dev/null
+sudo apt-get install -y build-essential g++ cmake -y &>/dev/null
 printf "node index.js \nnode.js" > startbot
 chmod +x startbot
 read -p "IP: " IP
@@ -56,30 +57,21 @@ if [ $? -ne 0 ]; then
   echo "$output"
   echo -e "\e[1;31mERROR\e[0m"
   echo -e "\e[1;32mTrying other method\e[0m"
-  sudo apt install zip -y &>/dev/null
-  apt install zip -y &>/dev/null
-  sudo apt install unzip -y &>/dev/null
-  apt install unzip -y &>/dev/null
-  echo -e "\e[1;33m[75%]Replacing node_mudules\e[0m"
-  wget https://github.com/fancode343/mcpe-bot/releases/download/0.01/node_.modules.zip  &>/dev/null
-  unzip node_.modules.zip &>/dev/null
-  rm node_.modules.zip
-  echo -e "\e[1;32m$NAME Joining to $IP \nVersion - $VERSION\n$output\e[0m"
+  echo -e "\e[1;33m[45%]Cleaning node_modules\e[0m"
+  npm cache clean --force &>/dev/null
+  rm -rf node_modules &>/dev/null
+  npm install --force &>/dev/null
+  echo -e "\e[1;33m[50%]Installing raknet-native\e[0m"
+  npm install raknet-native --force &>/dev/null
+  echo -e "\e[1;33m[99%]Installing bedrock-protocol\e[0m"
+  npm install bedrock-protocol &>/dev/null
+  echo -e "\e[1;33m[100%]Done\e[0m"
+  echo -e "\e[1;32mTrying to join $NAME to $IP \nVersion - $VERSION\n$output\e[0m"
   output=$(node index.js 2>&1)
-  elif [ $? -ne 0 ]; then
-  echo "$output"
-  echo -e "\e[1;31mERROR\e[0m"
-  echo -e "\e[1;32mTrying other method 2\e[0m"
-  sudo apt install cmake -y &>/dev/null
-  apt install cmake -y &>/dev/null
-  output=$(node index.js 2>&1)
-  echo -e "\e[1;32m$NAME Joining to $IP \nVersion - $VERSION\n$output\e[0m"
     elif [ $? -ne 0 ]; then
   echo "$output"
   echo -e "\e[1;31mERROR\e[0m"
-  echo -e "\e[1;33Trying To Restartm\e[0m"
-  wget https://raw.githubusercontent.com/fancode343/mcpe-bot/main/mcpebotrestart.sh
-  bash mcpebotrestart.sh
+  echo -e "\e[1;31m Il Tried all Method but your System Connot Support Minecraft Bedrock Bot (bedrock-protocol)\e[0m"
 else
   echo "EXIT"
 fi
