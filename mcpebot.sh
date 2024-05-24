@@ -28,9 +28,9 @@ echo -e "\e[32mFALSE[0] = YOU WILL ASK TO SIGN IN XBOX(default)\e[0m"
 echo -e "\e[32mTRUE[1] = JOIN WITHOUT SIGNIN TO XBOX\e[0m"
 read -p "Enter Input (0-1): " OFFLINE
 echo -e "\e[1;33m[50%]Installing nodejs\e[0m"
-curl -fsSL https://deb.nodesource.com/setup_17.x | sudo -E bash - &>/dev/null
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - &>/dev/null
 sudo apt-get install -y nodejs &>/dev/null
-curl -fsSL https://deb.nodesource.com/setup_17.x | bash - &>/dev/null
+curl -fsSL https://deb.nodesource.com/setup_18.x | bash - &>/dev/null
 apt-get install -y nodejs &>/dev/null
 echo -e "\e[1;33m[75%]Installing bedrock-protocol npm\e[0m"
 npm install bedrock-protocol &>/dev/null
