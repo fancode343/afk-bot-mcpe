@@ -8,9 +8,9 @@ app.use(express.static("public"));
 app.get("/bot", (req, res) => {
   const bedrock = require('bedrock-protocol') 
   const client = bedrock.createClient({ 
-    host: 'MoonLightSMPG2.aternos.me', 
-    port: 64319, 
-    version: '1.20.0', 
+    host: 'epstien.lmnet.cf', 
+    port: 19132, 
+    version: '1.21.50', 
     username: 'Bot3', 
     offline: false
   });
